@@ -1,6 +1,7 @@
 ## [blogmatehub.vercel.app](https://blogmatehub.vercel.app)
 # BlogMate - платформа для создания и управления персональными блогами. 
 React.js(Vite) + NoSQL Firebase
+
 ![screensot](https://github.com/sha111tan/BlogMate/blob/main/Снимок%20экрана%20(95).png)
 
 ## 📝 Основной стек:
