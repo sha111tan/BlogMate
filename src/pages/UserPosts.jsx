@@ -6,7 +6,7 @@ import BlogPost from "../components/BlogPost";
 import Loader from "../components/Loader";
 
 const UserPosts = () => {
-  const { userInfo, darkMode } = useContext(UserContext);
+  const { userInfo } = useContext(UserContext);
   const [userPosts, setUserPosts] = useState([]);
 
   let data = [];
@@ -28,9 +28,7 @@ const UserPosts = () => {
 
   return (
     <div
-      className={`${
-        darkMode && "bg-gradient-to-r from-zinc-900 to-zinc-800"
-      } max-w-5xl mx-auto flex flex-col gap-5 items-center p-3 md:p-5 overflow-x-hidden`}
+      className="bg-gradient-to-r from-zinc-900 to-zinc-800 max-w-5xl mx-auto flex flex-col gap-5 items-center p-3 md:p-5 overflow-x-hidden"
     >
       {userInfo && (
         <div className="flex flex-col gap-3 items-center text-2xl">
@@ -42,18 +40,13 @@ const UserPosts = () => {
             {userInfo?.displayName}
           </div>
           <span
-            className={
-              darkMode
-                ? "text-dark-text text-sm"
-                : "text-light-mode-text text-sm"
-            }
+            className="text-light-mode-text text-sm"
+            
           >
             {userInfo?.email}
           </span>
           <h2
-            className={`${
-              darkMode ? "text-white" : ""
-            } text-3xl font-semibold pt-5`}
+            className="text-3xl font-semibold pt-5"
           >
             Статьи ({userPosts?.length})
           </h2>
@@ -63,9 +56,7 @@ const UserPosts = () => {
         userPosts?.map((blog) => <BlogPost {...blog} key={blog.id} />)}
       {userPosts?.length == 0 && (
         <h1
-          className={`${
-            darkMode ? " text-dark-text" : ""
-          } text-3xl font-semibold text-center mt-20`}
+          className="text-3xl font-semibold text-center mt-20"
         >
           Нет публикаций!
         </h1>

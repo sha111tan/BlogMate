@@ -7,7 +7,7 @@ import { IoMdAdd } from "react-icons/io";
 import { auth } from "../firebase";
 
 const Home = () => {
-  const { darkMode, userInfo, setUserInfo } = useContext(UserContext);
+  const { userInfo, setUserInfo } = useContext(UserContext);
 
   useEffect(() => {
     auth.onAuthStateChanged((state) => {
@@ -22,15 +22,8 @@ const Home = () => {
   return (
     <>
       <div
-        className={`${
-          darkMode
-            ? "bg-gradient-to-r from-zinc-900 to-zinc-800"
-            : "bg-gradient-to-br from-gray-200 to-white "
-<<<<<<< Updated upstream
-        } flex flex-col shadow-lg min-h-screen rounded-3xl items-center  pb-20`}
-=======
-        } flex flex-col shadow-lg rounded-3xl min-h-screen items-center  pb-20`}
->>>>>>> Stashed changes
+        className="bg-gradient-to-br from-gray-200 to-white flex flex-col shadow-lg min-h-screen rounded-3xl items-center  pb-20"
+
       >
         <Blog />
         {userInfo && (

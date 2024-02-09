@@ -11,7 +11,7 @@ import { db } from "../firebase";
 
 const FileInput = () => {
   const [file, setFile] = useState(null);
-  const { postImage, setPostImage, darkMode } = useContext(UserContext);
+  const { postImage, setPostImage } = useContext(UserContext);
   const files = postImage == "" ? "" : postImage;
 
   const handleFileInputChange = (event) => {
@@ -93,48 +93,28 @@ const Post = () => {
   }
 
   return (
-<<<<<<< Updated upstream
-    <div
-      className={`${
-        darkMode ? "bg-gradient-to-r from-zinc-900 to-zinc-800" : "flex justify-center min-h-body bg-gradient-to-br from-gray-200 to-white"
-      } flex justify-center min-h-body`}
-    >
-=======
     <div className="flex justify-center min-h-body bg-gradient-to-br from-gray-200 to-white">
->>>>>>> Stashed changes
       <div className="max-w-xl mx-auto flex flex-col items-center p-5 w-full">
         <Link
           to="/"
-          className={`${
-            darkMode ? "text-dark-text" : "text-light-mode-text"
-          } flex items-center gap-2 text-sm  hover:underline underline-offset-4 pb-5`}
+          className="text-light-mode-text flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5"
         >
           <BiArrowBack /> Вернуться на Главную
         </Link>
         <h1
-          className={`${
-            darkMode ? "text-white" : ""
-          } text-3xl font-semibold text-center mt-5 mb-10`}
+          className= "text-3xl font-semibold text-center mt-5 mb-10"
         >
           Создать статью:
         </h1>
         <form className="flex flex-col gap-5" onSubmit={createNewPost}>
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
             >
               Название статьи:
             </h2>
             <input
-              className={`${
-                darkMode ? "text-white" : ""
-<<<<<<< Updated upstream
-              } border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full`}
-=======
-              } border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md resize-none placeholder:text-sm w-full`}
->>>>>>> Stashed changes
+              className="border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full"
               type="text"
               required
               name="title"
@@ -146,20 +126,14 @@ const Post = () => {
           </div>
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
+               
             >
               Краткое описание:
             </h2>
             <textarea
-              className={`${
-                darkMode ? "text-white" : ""
-<<<<<<< Updated upstream
-              } border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full resize-none h-24`}
-=======
-              } border-light-mode border-2 bg-white text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full resize-none h-24`}
->>>>>>> Stashed changes
+              className=" border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full resize-none h-24"
+
               type="text"
               required
               name="summary"
@@ -171,9 +145,8 @@ const Post = () => {
           </div>
 
           <div
-            className={`flex flex-col  gap-3 ${
-              darkMode ? "text-dark-text" : "text-light-mode-text"
-            }`}
+            className="flex flex-col  gap-3 text-light-mode-text"
+           
           >
             <h2 className={`text-2xl`}>Добавить изображение:</h2>
             <FileInput />
@@ -181,16 +154,15 @@ const Post = () => {
 
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl `}
+              className="text-light-mode-text text-2xl"
+              
             >
               Текст статьи:
             </h2>
             <Editor
               value={content}
               onChange={setContent}
-              theme={darkMode && "text-white"}
+              theme={"text-black"}
             />
           </div>
 

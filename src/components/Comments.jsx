@@ -4,7 +4,7 @@ import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../firebase";
 
 const Comments = () => {
-  const { darkMode, userInfo, info } = useContext(UserContext);
+  const { userInfo, info } = useContext(UserContext);
   const [comment, setComment] = useState(info?.comments);
   const [input, setInput] = useState("");
 
@@ -24,17 +24,14 @@ const Comments = () => {
 
   return (
     <div
-      className={`${
-        darkMode ? "bg-darker text-dark-text" : "bg-white text-light-mode-text"
-      } p-5 mb-5 rounded-3xl shadow-md pb-10 w-full flex flex-col`}
+      className="bg-white text-light-mode-text p-5 mb-5 rounded-3xl shadow-md pb-10 w-full flex flex-col"
     >
       <>
         <h3 className="pt-3 pb-5 font-bold text-2xl">Комментарии</h3>
         {userInfo && (
           <div
-            className={`flex pb-5 flex-col items-center gap-3 border-b ${
-              darkMode ? "border-dark-text" : "border-light-mode-text"
-            }`}
+            className="flex pb-5 flex-col items-center gap-3 border-b border-light-mode-text"
+          
           >
             <div className="flex items-center gap-3 w-full">
               <img
@@ -42,9 +39,7 @@ const Comments = () => {
                 className="w-10 h-10 object-cover rounded-full"
               />
               <span
-                className={`${
-                  darkMode ? "text-white" : "text-black"
-                } font-semibold`}
+                className="text-black font-semibold"
               >
                 {userInfo.displayName}
               </span>
@@ -77,19 +72,15 @@ const Comments = () => {
                   className="rounded-full w-8 h-8 max-w-none"
                 />
                 <span
-                  className={`${
-                    darkMode ? "text-white" : "text-dark"
-                  } font-semibold`}
+                  className="text-dark font-semibold"
                 >
                   {comment?.user}
                 </span>
               </div>
               <div
-                className={`${
-                  darkMode ? "border-dark-text" : "border-light-mode-text"
-                } flex flex-col gap-3 w-full`}
+                className="border-light-mode-textflex flex-col gap-3 w-full"
               >
-                <span className={`${darkMode ? "text-white" : "text-dark"}`}>
+                <span className="text-dark">
                   {comment?.comment}
                 </span>
               </div>

@@ -21,7 +21,7 @@ import { BsTelegram } from "react-icons/bs";
 import { getAuth, signOut } from "firebase/auth";
 
 const Navbar = () => {
-  const { userInfo, darkMode, setDarkMode, navOpen, setNavOpen } =
+  const { userInfo, navOpen, setNavOpen } =
     useContext(UserContext);
 
   const logout = () => {
@@ -44,39 +44,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`${
-        darkMode ? "bg-dark " : "bg-white "
-      } z-50 px-5 bg-opacity-80 rounded-b-3xl shadow-md shadow-black/[0.03] backdrop-blur-[0.5rem] flex items-center justify-center  sticky top-0 `}
+      className="bg-white z-50 px-5 bg-opacity-80 rounded-b-3xl shadow-md shadow-black/[0.03] backdrop-blur-[0.5rem] flex items-center justify-center  sticky top-0"
     >
       <div className="h-[60px] md:relative w-full flex items-center justify-evenly max-w-6xl">
         {/* логотип */}
         <Link to="/" className="">
           <img
             className="w-24 duration-300 focus:scale-[1.15] hover:scale-[1.15]   active:scale-100 "
-            src={darkMode ? "/logo-dark.png" : "/logo.png"}
+            src="/logo.png"
             alt="Harsh"
           />
         </Link>
-
-        {/* 
-        <div
-          onClick={() => setNavOpen((prev) => !prev)}
-          className={`${darkMode && "text-dark-text"} ${
-            navOpen && "hidden"
-          } md:hidden text-3xl z-50`}
-        >
-          <HiOutlineMenuAlt1 />
-        </div>
-        <div
-          onClick={() => setNavOpen((prev) => !prev)}
-          className={`${darkMode && "text-dark-text"} ${
-            !navOpen && "hidden"
-          } md:hidden text-4xl z-50`}
-        >
-          <MdClose />
-        </div>
-         */}
-
         <div className="flex items-center gap-5 text-white">
           {userInfo !== null ? (
             <div>

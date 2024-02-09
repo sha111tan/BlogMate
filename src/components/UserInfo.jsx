@@ -8,7 +8,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const FileInput = () => {
   const [image, setImage] = useState(null);
-  const { url, setUrl, userInfo, darkMode } = useContext(UserContext);
+  const { url, setUrl, userInfo} = useContext(UserContext);
 
   const uploadImage = async (e) => {
     e.preventDefault();
@@ -43,20 +43,12 @@ const FileInput = () => {
           {url == "" ? (
             <IoMdAddCircle
               size={25}
-              className={`${
-                darkMode
-                  ? "bg-gradient-to-r from-zinc-900 to-zinc-800"
-                  : "bg-white"
-              } text-accent rounded-full`}
+              className="bg-white text-accent rounded-full"
             />
           ) : (
             <IoMdRemoveCircle
               size={25}
-              className={`${
-                darkMode
-                  ? "bg-gradient-to-r from-zinc-900 to-zinc-800"
-                  : "bg-white"
-              } text-red rounded-full`}
+              className="bg-white text-red rounded-full"
             />
           )}
         </label>
@@ -69,18 +61,12 @@ const FileInput = () => {
       </div>
       <button
         onClick={uploadImage}
-        className={`mt-5 p-3 ease-out font-bold duration-300 cubic-bezier(0.22, 0.61, 0.36, 1) shadow-xl focus:scale-[1.10] hover:scale-[1.10] active:scale-100 text-white rounded-xl ${
-          darkMode
-            ? "bg-gradient-to-r from-gray-700 to-gray-900"
-            : "bg-gradient-to-r from-gray-700 to-gray-900"
-        }`}
+        className="mt-5 p-3 ease-out font-bold duration-300 cubic-bezier(0.22, 0.61, 0.36, 1) shadow-xl focus:scale-[1.10] hover:scale-[1.10] active:scale-100 text-white rounded-xl bg-gradient-to-r from-gray-700 to-gray-900"
       >
         Применить изменения
       </button>
       <span
-        className={`${
-          darkMode ? "text-dark-text" : "text-light-mode-text"
-        } text-xs pt-1`}
+        className="text-light-mode-text text-xs pt-1"
       ></span>
     </div>
   );
@@ -111,29 +97,19 @@ const UserInfo = () => {
 
   return (
     <div
-      className={`${
-        darkMode ? "bg-dark" : "sm:bg-light-mode"
-      } min-h-body rounded-3xl shadow-md w-screen flex items-center justify-center`}
+      className="sm:bg-light-mode min-h-body rounded-3xl shadow-md w-screen flex items-center justify-center"
     >
       <div
-        className={`${
-          darkMode
-            ? "bg-gradient-to-r from-zinc-900 to-zinc-800"
-            : "bg-gradient-to-br from-gray-200 to-white shadow-md "
-        } sm:rounded-xl rounded-3xl shadow-form flex flex-col items-center pb-5 sm:pb-10 sm:w-[500px] w-full sm:min-h-max min-h-body`}
+        className="bg-gradient-to-br from-gray-200 to-white shadow-md sm:rounded-xl rounded-3xl shadow-form flex flex-col items-center pb-5 sm:pb-10 sm:w-[500px] w-full sm:min-h-max min-h-body"
       >
         <Link
           to="/"
-          className={`${
-            darkMode ? "text-dark-text" : "text-light-mode-text"
-          } pt-5 sm:hidden flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5`}
+          className="text-light-mode-text pt-5 sm:hidden flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5"
         >
           <BiArrowBack /> Вернуться на Главную
         </Link>
         <h1
-          className={`${
-            darkMode ? " text-white" : ""
-          } text-2xl md:text-3xl font-bold text-center mt-10 mb-5`}
+          className="text-2xl md:text-3xl font-bold text-center mt-10 mb-5"
         >
           Профиль
         </h1>
@@ -150,11 +126,7 @@ const UserInfo = () => {
               name="name"
               id="name"
               size={1}
-              className={`${
-                darkMode
-                  ? "bg-gradient-to-r from-zinc-800 to-zinc-700 text-white border-light-mode-text "
-                  : "border-light-mode border-2 text-black"
-              } p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full`}
+              className="border-light-mode border-2 bg-white text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full"
               placeholder="Куда мы лезем, боже... "
               required
             />

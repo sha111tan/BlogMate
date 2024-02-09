@@ -12,7 +12,7 @@ import Comments from "../components/Comments";
 
 const BlogPage = () => {
   const { id } = useParams();
-  const { userInfo, setUserInfo, darkMode, info, setInfo } =
+  const { userInfo, setUserInfo, info, setInfo } =
     useContext(UserContext);
 
   const getData = async () => {
@@ -46,11 +46,7 @@ const BlogPage = () => {
 
   return (
     <div
-      className={`${
-        darkMode
-          ? "bg-gradient-to-r from-zinc-900 to-zinc-800 "
-          : "bg-gradient-to-br from-gray-200 to-white"
-      } min-h-body shadow-lg rounded-3xl `}
+      className="bg-gradient-to-br from-gray-200 to-white min-h-body shadow-lg rounded-3xl"
     >
       {/* React Helmet for Meta data */}
       <Helmet>
@@ -84,25 +80,20 @@ const BlogPage = () => {
         >
           <Link
             to="/"
-            className={`${
-              darkMode ? "text-dark-text" : "text-light-mode-text"
-            } flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5`}
+            className="text-light-mode-text flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5"
           >
             <BiArrowBack /> Вернуться на Главную
           </Link>
 
           <h1
-            className={`${
-              darkMode && "text-white"
-            } text-4xl font-bold text-left w-full pt-1 pb-2 sm:pb-8`}
+            className="text-4xl font-bold text-left w-full pt-1 pb-2 sm:pb-8"
           >
             {info.title}
           </h1>
           <div className="pb-10 flex flex-row gap-5 items-center flex-wrap w-full justify-between">
             <span
-              className={`flex gap-3 md:text-xl items-center ${
-                darkMode ? "text-dark-text" : "text-dark"
-              }`}
+              className="flex gap-3 md:text-xl items-center text-dark"
+              
             >
               {info.author?.profile ? (
                 <img
@@ -120,9 +111,8 @@ const BlogPage = () => {
               )}
             </span>
             <span
-              className={`flex gap-3 items-center ${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              }`}
+              className="flex gap-3 items-center text-light-mode-text"
+             
             >
               <BsCalendar />
               {new Date(info?.timestamp?.seconds * 1000)
@@ -139,9 +129,7 @@ const BlogPage = () => {
           </div>
           <div
             dangerouslySetInnerHTML={{ __html: info.content }}
-            className={`${
-              darkMode ? "content-dark" : "content"
-            } w-full py-10 flex flex-col justify-start`}
+            className="content w-full py-10 flex flex-col justify-start"
           />
           <div className="hidden md:flex w-full">
             <Comments />

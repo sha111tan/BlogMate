@@ -11,7 +11,7 @@ import { db } from "../firebase";
 
 const FileInput = () => {
   const [file, setFile] = useState(null);
-  const { postImage, setPostImage, info, darkMode } = useContext(UserContext);
+  const { postImage, setPostImage, info } = useContext(UserContext);
   const files = postImage == "" ? info.files : postImage;
 
   const handleFileInputChange = (event) => {
@@ -82,44 +82,28 @@ const EditPost = () => {
     return <Navigate to={`/post/${id}`} />;
   }
   return (
-<<<<<<< Updated upstream
-    <div
-      className={`${
-        darkMode ? "bg-gradient-to-r from-zinc-900 to-zinc-800" : "flex justify-center min-h-body bg-gradient-to-br from-gray-200 to-white"
-      } flex justify-center min-h-body`}
-    >
-=======
     <div className="flex justify-center min-h-body bg-gradient-to-br from-gray-200 to-white">
->>>>>>> Stashed changes
       <div className="max-w-xl mx-auto flex flex-col items-center p-5 w-full">
         <Link
           to="/"
-          className={`${
-            darkMode ? "text-dark-text" : "text-light-mode-text"
-          } flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5`}
+          className="text-light-mode-text flex items-center gap-2 text-sm hover:underline underline-offset-4 pb-5"
         >
           <BiArrowBack /> Вернуться на Главную
         </Link>
         <h1
-          className={`${
-            darkMode ? "text-white" : ""
-          } text-3xl font-semibold text-center mt-5 mb-10`}
+          className="text-3xl font-semibold text-center mt-5 mb-10"
         >
           Изменить статью:
         </h1>
         <form className="flex flex-col gap-5" onSubmit={updatePost}>
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
             >
               Название статьи:
             </h2>
             <input
-              className={`${
-                darkMode ? "text-white" : ""
-              } border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full p-2`}
+              className="border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full p-2"
               type="text"
               name="title"
               id="title"
@@ -131,16 +115,12 @@ const EditPost = () => {
           </div>
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
             >
               Краткое описание:
             </h2>
             <input
-              className={`${
-                darkMode ? "text-white" : ""
-              } border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full h-24`}
+              className="border-light-mode bg-white border-2 text-black p-4 text-lg rounded-3xl outline-none shadow-md placeholder:text-sm w-full h-24"
               type="text"
               name="summary"
               id="summary"
@@ -153,9 +133,7 @@ const EditPost = () => {
 
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
             >
               Добавить изображение:
             </h2>
@@ -164,19 +142,17 @@ const EditPost = () => {
 
           <div className="flex flex-col gap-3">
             <h2
-              className={`${
-                darkMode ? "text-dark-text" : "text-light-mode-text"
-              } text-2xl`}
+              className="text-light-mode-text text-2xl"
             >
               Текст статьи:
             </h2>
             <Editor
               value={content}
               onChange={setContent}
-              theme={darkMode && "text-white"}
+              theme={"text-black"}
             />
           </div>
-
+          
           <button className="bg-gradient-to-r from-gray-700 to-gray-900 text-white font-semibold p-4 mt-10 rounded-2xl hover:bg-dark">
             Обновить статью
           </button>
